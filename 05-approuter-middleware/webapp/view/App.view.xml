@@ -1,0 +1,33 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+          controllerName = "sap.ui.demo.controller.App"
+          xmlns="sap.m">
+    <Button text = "Add 1"
+            press = ".addOne"/>
+    <Text text="0" id="counter" />
+    <List
+        id = "episodeList"
+        headerText="{youTubeModel>/items/1/snippet/channelTitle}"
+        items="{youTubeModel>/items}"
+        >
+        <items>
+        <StandardListItem
+                title = "{youTubeModel>snippet/title}"
+                description = "{youTubeModel>snippet/publishedAt}"
+        />
+        </items>
+    </List>
+<!--    step 4 - we are changing the data model binding from default model
+to named model - youtube model - check manfiest.json for its details  
+        <List
+        id = "episodeList"
+        headerText="{/title}"
+        items="{/episodes}"
+        >
+        <items>
+        <StandardListItem
+                title = "{title}"
+                description = "{index}"
+        />
+        </items>
+    </List> -->
+</mvc:View>
